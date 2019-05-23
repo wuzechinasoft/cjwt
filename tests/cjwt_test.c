@@ -1,3 +1,4 @@
+test testgithub
 /**
  * Copyright 2017 Comcast Cable Communications Management, LLC
  *
@@ -227,26 +228,4 @@ Suite *libcjwt_suite( void )
     pass_cnt = 0;
     fail_cnt = 0;
     tcase_add_loop_test( tc_core, test_cjwt_decode, 0, _NUM_TEST_CASES );
-    suite_add_tcase( s, tc_core );
-    printf( "Decode Tests passed %d\n", pass_cnt );
-    printf( "Decode Tests failed %d\n", fail_cnt );
-    return s;
-}
-
-int main()
-{
-    int number_failed = 0;
-    Suite *s;
-    SRunner *sr;
-    s = libcjwt_suite();
-    sr = srunner_create( s );
-    srunner_run_all( sr, CK_VERBOSE );
-    number_failed = srunner_ntests_failed( sr );
-    srunner_print( sr, CK_NORMAL );
-    srunner_free( sr );
-	printf("Fail count = %d\n",number_failed);
-    //return ( number_failed == 0 ) ? EXIT_SUCCESS : EXIT_FAILURE; //TBD, inconsistent return value
-	return 0-number_failed;
-}
-
-
+    suite_add_tcase( s, tc_core
